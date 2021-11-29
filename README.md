@@ -1,4 +1,4 @@
-# Flap Hero
+# Flappy Bird
 
 This is the source code for [Flap Hero](https://arc80.com/flaphero/), a small, free game that runs on multiple platforms. It's available on [Android](https://play.google.com/store/apps/details?id=com.arc80.flaphero) and [iOS](https://apps.apple.com/gb/app/flap-hero/id1538082494). 
 
@@ -14,7 +14,7 @@ Please note that Plywood is still a young project, and Flap Hero is the first Pl
 
 ## Build Instructions
 
-First, follow KnyazQasan's guide to create a Plywood workspace. After following that guide, the `plytool` (or `plytool.exe`) executable should be located in your workspace root.
+First, follow KnyazQasan's guide to create a Knyaz workspace. After following that guide, the `plytool` (or `plytool.exe`) executable should be located in your workspace root.
 
     $ cd repos
     $ git clone https://github.com/KnyazQasan/First-Game-c-/
