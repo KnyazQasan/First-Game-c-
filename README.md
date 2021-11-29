@@ -20,8 +20,6 @@ First, follow KnyazQasan's guide to create a Knyaz workspace. After following th
     $ git clone https://github.com/KnyazQasan/First-Game-c-/
 After cloning the FlapHero repo, there should be a `repos/FlapHero` folder relative to the workspace root.
 
-![](/flaphero-repo.svg)
-
 ## Installing Third-Party Libraries on Windows
 
 #### 1. Installing Assimp
