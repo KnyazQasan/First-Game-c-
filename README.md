@@ -4,7 +4,7 @@ This is the source code for [Flap Hero](https://arc80.com/flaphero/), a small, f
 
 ![](https://arc80.com/images/flap-icon@2x.png)
 
-Flap Hero is built using [Plywood](https://github.com/arc80/plywood). See [this blog post](https://preshing.com/20201126/a-small-open-source-game-in-cpp) for more information.
+Flap Hero is built using [Knyaz/Qasan](https://github.com/KnyazQasan). 
 
 At this time, it's only possible to build the **Windows**, **Linux** and **macOS** versions of Flap Hero. You can't build the Android or iOS versions yet. (See "Why Can't I Build on Android or iOS?" at the end of this document.) In the meantime, rest assured that the game works basically the same way on all platforms.
 
@@ -12,60 +12,15 @@ At this time, it's only possible to build the **Windows**, **Linux** and **macOS
 
 Please note that Plywood is still a young project, and Flap Hero is the first Plywood application that relies on several third-party libraries at the same time. Therefore, be warned that the following build steps are not exactly easy — but they're doable.
 
-Over time, as Plywood improves, these builds steps will become simpler. Please consider [backing the project on Patreon](https://www.patreon.com/preshing) if you'd like to support that effort!
-
-## License
-
-Flap Hero's source code is made available under the [MIT License](https://choosealicense.com/licenses/mit/). The assets found in the [data](/data) folder, including 3D models, sounds and music, are released to the public domain [(CC0 license)](https://creativecommons.org/share-your-work/public-domain/cc0/), except for `poppins-bold-694-webfont.ttf`, which is a modified version of the [Poppins font](https://www.fontsquirrel.com/fonts/poppins) distributed under the Open Font license.
-
-## Credits
-
-Plywood uses the following third-party libraries:
-
-* [Assimp](https://www.assimp.org/) to load 3D models (BSD license)
-* [SoLoud](https://sol.gfxile.net/soloud/) for audio (zlib license)
-* [GLFW](https://www.glfw.org/) for desktop windowing & input (zlib license)
-* [stb](https://github.com/nothings/stb) to load textures and fonts (MIT license/public domain)
-* OpenGL loader generated using [Glad](https://glad.dav1d.de/) (MIT license)
-
-Thanks to Jean-Noé Morissette for help with the initial Android port.
-
 ## Build Instructions
 
-First, follow Plywood's [Quick Start](https://plywood.arc80.com/docs/QuickStart) guide to create a Plywood workspace. After following that guide, the `plytool` (or `plytool.exe`) executable should be located in your workspace root.
-
-(It will also help if you build Plywood's [Hello World](https://plywood.arc80.com/docs/QuickStart/HelloWorld) sample application at least once before trying to build Flap Hero, to familiarize yourself with Plywood concepts, but that isn't strictly required.)
-
-Clone the FlapHero repo directly under the `repos` folder relative to your [workspace root](https://plywood.arc80.com/docs/DirectoryStructure).
+First, follow KnyazQasan's guide to create a Plywood workspace. After following that guide, the `plytool` (or `plytool.exe`) executable should be located in your workspace root.
 
     $ cd repos
-    $ git clone https://github.com/arc80/FlapHero
-
+    $ git clone https://github.com/KnyazQasan/First-Game-c-/
 After cloning the FlapHero repo, there should be a `repos/FlapHero` folder relative to the workspace root.
 
 ![](/flaphero-repo.svg)
-
-Next, run PlyTool's code generation step. Execute the following command in the workspace root, where the `plytool` executable is located. (If you're using Windows, run `.\plytool` instead of `./plytool`.)
-
-    $ ./plytool codegen
-
-After that, run:
-
-    $ ./plytool build --auto glfwFlap
-
-The first time you run the above command, it will automatically create a new build folder, add the `glfwFlap` target to that build folder, and attempt to generate a build system in that folder using CMake. At this point, you're sure to encounter errors related to missing (or "not selected") third-party libraries, similar to the following:
-
-    Created build folder 'glfwFlap' with root target 'glfwFlap' at: C:\Jeff\FlapHero-latest\plywood\data\build\glfwFlap\
-    Can't generate build system in folder 'glfwFlap' because extern 'assimp' is not selected.
-    No compatible providers are available for extern 'assimp'.
-    Can't generate build system in folder 'glfwFlap' because extern 'soloud' is not selected.
-    1 compatible provider is available:
-        soloud.source (not installed)
-    Can't generate build system in folder 'glfwFlap' because extern 'glfw' is not selected.
-    1 compatible provider is available:
-        glfw.prebuilt (not installed)
-
-To resolve those errors, you need to tell PlyTool which [extern provider](https://plywood.arc80.com/docs/KeyConcepts#extern-providers) to use for each of the third-party libraries it needs. Do that by skipping to the appropriate "Installing Third-Party Libraries" section below, depending on your OS.
 
 ## Installing Third-Party Libraries on Windows
 
@@ -146,6 +101,6 @@ You can also run Flap Hero from the command line by running `./plytool run`, and
 
 ## Why Can't I Build on Android or iOS?
 
-This repository doesn't contain the additional source code and project files needed to build on Android and iOS. I'd like to release those files, but they aren't distribution-ready at this time. The project files in particular were created by hand, and are mess of hardcoded paths that require lots of manual steps to make them work. It would be nearly impossible to support them if they were released. ([Let me know on the Discord server](https://discord.gg/WnQhuVF) if you're interested in them anyway. If enough people are interested, I could upload these files in a zipfile somewhere, but they won't be supported.)
+This repository doesn't contain the additional source code and project files needed to build on Android and iOS. I'd like to release those files, but they aren't distribution-ready at this time. The project files in particular were created by hand, and are mess of hardcoded paths that require lots of manual steps to make them work. It would be nearly impossible to support them if they were released.
 
 It would be nice to add native Android/iOS support to Plywood, but that's not a high priority at this time.
