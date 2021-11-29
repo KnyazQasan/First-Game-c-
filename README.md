@@ -103,4 +103,4 @@ You can also run Flap Hero from the command line by running `./plytool run`, and
 
 This repository doesn't contain the additional source code and project files needed to build on Android and iOS. I'd like to release those files, but they aren't distribution-ready at this time. The project files in particular were created by hand, and are mess of hardcoded paths that require lots of manual steps to make them work. It would be nearly impossible to support them if they were released.
 
-It would be nice to add native Android/iOS support to Plywood, but that's not a high priority at this time.
+It would be nice to add native Android/iOS support to Knyaz, but that's not a high priority at this time.
